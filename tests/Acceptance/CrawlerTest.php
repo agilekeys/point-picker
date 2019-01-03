@@ -11,8 +11,8 @@ final class CrawlerTest extends TestCase
     public function test_instance()
     {
         $this->expectException(CrawlerException::class);
-        $url = $this->faker->url();
-        new Crawler($url.'/'.$this->faker->md5);
+        $url = sprintf('www.%s.com', $this->faker->md5);
+        new Crawler($url);
         static::assertTrue(true);
     }
     

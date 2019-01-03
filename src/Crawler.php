@@ -8,25 +8,24 @@ use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 final class Crawler
 {
     private $url;
-    
     private $body;
-    
     private $client;
-    
     private $parser;
     
     public function __construct(string $url)
     {
         $this->url = $url;
+        $this->client = new Client(['base_uri' => $this->url]);
         $this->parse();
     }
-    
+
     public function parse()
     {
         try {
-            $this->client = new Client(['base_uri' => $url]);
-            $response = $this->client->request('GET');
-            $this->body = $response->getBody()->getContents();
+            $this->body = $this->client
+                            ->request('GET')
+                            ->getBody()
+                            ->getContents();
             $this->parser = new DomCrawler($this->body);
         } catch (\Exception $e) {
             throw new CrawlerException($e->getMessage());
@@ -52,6 +51,4 @@ final class Crawler
     {
         $this->body = $body;
     }
-    
-
 }
