@@ -1,0 +1,22 @@
+{
+    "require": {
+        "symfony/dom-crawler": "^3.4",
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/css-selector": "^3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5",
+        "fzaninotto/faker": "^1.8",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Agilekeys\\Priceline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Agilekeys\\Priceline\\Tests\\": "tests/"
+        }
+    }
+}
