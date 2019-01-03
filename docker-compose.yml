@@ -1,0 +1,33 @@
+version: '3.1'
+services:
+    composer:
+        image: dockercraft/composer
+        container_name: composer
+        entrypoint:
+            - composer
+        command: "-v"
+        working_dir: "/var/www"
+        volumes:
+            - .:/var/www
+        
+
+    phpunit:
+        image: dockercraft/php:php-cli-7.1
+        container_name: phpunit
+        entrypoint:
+            - vendor/bin/phpunit
+        command: "-v"
+        working_dir: "/var/www"
+        volumes:
+            - .:/var/www
+
+    ci:
+        image: dockercraft/php:php-cli-7.1
+        container_name: ci
+        entrypoint:
+            - sh
+            - vendor/bin/check_standard
+        command: "-v"
+        working_dir: "/var/www"
+        volumes:
+            - .:/var/www
