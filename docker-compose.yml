@@ -20,14 +20,14 @@ services:
         working_dir: "/var/www"
         volumes:
             - .:/var/www
-
+    
     ci:
-        image: dockercraft/php:php-cli-7.1
+        image: dockercraft/php
         container_name: ci
         entrypoint:
-            - sh
+            - bash
             - vendor/bin/check_standard
-        command: "-v"
         working_dir: "/var/www"
         volumes:
             - .:/var/www
+            - ./php.ini:/etc/php7/conf.d/90-customization.ini
