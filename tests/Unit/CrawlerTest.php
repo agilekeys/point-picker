@@ -8,5 +8,8 @@ use Agilekeys\Priceline\Exceptions\CrawlerException;
 
 final class CrawlerTest extends TestCase
 {
-    
+    public function test_instance()
+    {
+    	static::assertTrue(true);
+    }
 }

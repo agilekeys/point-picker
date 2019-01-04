@@ -11,7 +11,7 @@ final class Crawler
     private $body;
     private $client;
     private $parser;
-    
+
     public function __construct(string $url)
     {
         $this->url = $url;
@@ -36,17 +36,17 @@ final class Crawler
     {
         return $this->parser->filter($filter);
     }
-    
+
     public function refresh()
     {
         $this->parser = new DomCrawler($this->body);
     }
-    
+
     public function getBody(): string
     {
         return $this->body;
     }
-    
+
     public function setBody(string $body)
     {
         $this->body = $body;
