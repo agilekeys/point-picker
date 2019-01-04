@@ -7,8 +7,7 @@
     "require-dev": {
         "fzaninotto/faker": "^1.8",
         "mockery/mockery": "^1.2",
-        "agilekeys/code-standards": "dev-master",
-        "phpunit/phpunit": "^7.5"
+        "agilekeys/code-standards": "^0.1"
     },
     "autoload": {
         "psr-4": {
