@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: duan.li
@@ -13,7 +13,7 @@ use Agilekeys\Priceline\Exceptions\CrawlerException;
 use Agilekeys\Priceline\Interfaces\Crawler;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 
-class File extends BaseCrawler implements Crawler
+final class File extends BaseCrawler implements Crawler
 {
     protected $file;
     /**

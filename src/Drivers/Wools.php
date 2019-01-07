@@ -12,7 +12,7 @@ use Agilekeys\Priceline\Abstracts\Driver;
 use Agilekeys\Priceline\Crawlers\Json;
 use Agilekeys\Priceline\Interfaces\Driver as DriverInterface;
 
-class Wools extends Driver implements DriverInterface
+final class Wools extends Driver implements DriverInterface
 {
     /** @var string $crawlerClass */
     protected $crawlerClass = Json::class;
