@@ -30,6 +30,6 @@ final class Wools extends Driver implements DriverInterface
      */
     public function filterPrice(): string
     {
-        return (string) $this->crawler->filter('ProductDetail.Product.Price') ?? '';
+        return (string)$this->crawler->filter('ProductDetail.Product.Price') ?? '';
     }
 }

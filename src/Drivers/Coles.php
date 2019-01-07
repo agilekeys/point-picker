@@ -30,6 +30,6 @@ final class Coles extends Driver implements DriverInterface
      */
     public function filterPrice(): string
     {
-        return (string) $this->crawler->filter('strong.product-price')->text() ?? '';
+        return (string)$this->crawler->filter('strong.product-price')->text() ?? '';
     }
 }

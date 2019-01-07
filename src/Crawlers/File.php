@@ -37,7 +37,6 @@ final class File extends BaseCrawler implements Crawler
         } catch (\Exception $e) {
             throw new CrawlerException($e->getMessage());
         }
-
     }
 
     /**
