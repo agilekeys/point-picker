@@ -9,7 +9,6 @@
 namespace Agilekeys\Priceline\Abstracts;
 
 use Agilekeys\Priceline\Crawler;
-use phpDocumentor\Reflection\Types\This;
 
 abstract class Driver
 {
@@ -24,6 +23,22 @@ abstract class Driver
      * @param string $url
      */
     public function __construct(string $url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setUrl(string $url): void
     {
         $this->url = $url;
     }

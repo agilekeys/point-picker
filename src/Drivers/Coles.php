@@ -12,7 +12,7 @@ use Agilekeys\Priceline\Abstracts\Driver;
 use Agilekeys\Priceline\Crawlers\File;
 use Agilekeys\Priceline\Interfaces\Driver as DriverInterface;
 
-final class Coles extends Driver implements DriverInterface
+class Coles extends Driver implements DriverInterface
 {
     /** @var string $crawlerClass */
     protected $crawlerClass = File::class;

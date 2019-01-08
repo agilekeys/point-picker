@@ -12,7 +12,7 @@ use Agilekeys\Priceline\Abstracts\Crawler as BaseCrawler;
 use Agilekeys\Priceline\Exceptions\CrawlerException;
 use Agilekeys\Priceline\Interfaces\Crawler;
 
-final class Json extends BaseCrawler implements Crawler
+class Json extends BaseCrawler implements Crawler
 {
     /** @var array $content */
     protected $content;
@@ -34,11 +34,11 @@ final class Json extends BaseCrawler implements Crawler
 
     /**
      * @param string $filter
-     * @return mixed
+     * @return null|string
      */
-    public function filter(string $filter)
+    public function filter(string $filter): ?string
     {
-        return array_get($this->content, $filter);
+        return (string)array_get($this->content, $filter);
     }
 
     public function refresh()

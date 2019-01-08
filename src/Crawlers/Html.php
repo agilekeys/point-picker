@@ -14,7 +14,7 @@ use Agilekeys\Priceline\Interfaces\Crawler;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 
 
-final class Html extends BaseCrawler implements Crawler
+class Html extends BaseCrawler implements Crawler
 {
     /** @var DomCrawler $parser */
     protected $parser;

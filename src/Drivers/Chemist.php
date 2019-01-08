@@ -12,7 +12,7 @@ use Agilekeys\Priceline\Abstracts\Driver;
 use Agilekeys\Priceline\Crawlers\Html;
 use Agilekeys\Priceline\Interfaces\Driver as DriverInterface;
 
-final class Chemist extends Driver implements DriverInterface
+class Chemist extends Driver implements DriverInterface
 {
     /** @var string $crawlerClass */
     protected $crawlerClass = Html::class;

@@ -13,7 +13,7 @@ use Agilekeys\Priceline\Exceptions\CrawlerException;
 use Agilekeys\Priceline\Interfaces\Crawler;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 
-final class File extends BaseCrawler implements Crawler
+class File extends BaseCrawler implements Crawler
 {
     protected $file;
     /**
