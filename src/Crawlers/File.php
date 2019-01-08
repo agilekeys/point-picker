@@ -23,7 +23,6 @@ final class File extends BaseCrawler implements Crawler
     public function __construct(string $path)
     {
         $this->file = $path;
-        $this->parse();
     }
 
     /**
@@ -32,7 +31,7 @@ final class File extends BaseCrawler implements Crawler
     public function parse()
     {
         try {
-            $this->body = \file_get_contents($this->file, FILE_USE_INCLUDE_PATH);
+            $this->body = \file_get_contents($this->file, true);
             $this->refresh();
         } catch (\Exception $e) {
             throw new CrawlerException($e->getMessage());

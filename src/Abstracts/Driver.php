@@ -9,6 +9,7 @@
 namespace Agilekeys\Priceline\Abstracts;
 
 use Agilekeys\Priceline\Crawler;
+use phpDocumentor\Reflection\Types\This;
 
 abstract class Driver
 {
@@ -25,7 +26,16 @@ abstract class Driver
     public function __construct(string $url)
     {
         $this->url = $url;
+    }
+
+    /**
+     * @return $this
+     * @throws \Agilekeys\Priceline\Exceptions\CrawlerException
+     */
+    public function connect(): self
+    {
         $this->crawler = $this->getCrawler();
+        return $this;
     }
 
     /**
@@ -36,6 +46,7 @@ abstract class Driver
     {
         if ($this->crawler === null) {
             $this->crawler = new $this->crawlerClass($this->url);
+            $this->crawler->parse();
         }
         return $this->crawler;
     }

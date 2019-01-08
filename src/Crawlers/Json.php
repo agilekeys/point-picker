@@ -19,22 +19,6 @@ final class Json extends BaseCrawler implements Crawler
     /** @var string $body */
     protected $body;
 
-    /**
-     * @return array
-     */
-    public function getContent(): array
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param array $content
-     */
-    public function setContent(array $content): void
-    {
-        $this->content = $content;
-    }
-
     public function parse()
     {
         try {

@@ -19,7 +19,7 @@ class ChemistTest extends TestCase
 
         $ch = new Chemist($url);
 
-        static::assertStringContainsString('Swisse Ultiboost Co Enzyme Q10 150mg 180 Capsules', $ch->filterName());
+        static::assertStringContainsString('Swisse Ultiboost Co Enzyme Q10 150mg 180 Capsules', $ch->connect()->filterName());
     }
 
     public function test_get_price()
@@ -28,6 +28,6 @@ class ChemistTest extends TestCase
 
         $ch = new Chemist($url);
 
-        static::assertStringContainsString('$39.99', $ch->filterPrice());
+        static::assertStringContainsString('$39.99', $ch->connect()->filterPrice());
     }
 }

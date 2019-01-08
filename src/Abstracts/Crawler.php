@@ -24,6 +24,9 @@ abstract class Crawler
 
     /** @var CookieJar */
     protected $cookie;
+    protected $parser;
+    protected $file;
+    protected $content;
 
     /**
      * Html constructor.
@@ -36,7 +39,102 @@ abstract class Crawler
         $this->url = $url;
         $this->cookie = new CookieJar;
         $this->client = new Client(['base_uri' => $this->url]);
-        $this->parse();
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setUrl(string $url): void
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @return Client
+     */
+    public function getClient(): Client
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param Client $client
+     */
+    public function setClient(Client $client): void
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @return CookieJar
+     */
+    public function getCookie(): CookieJar
+    {
+        return $this->cookie;
+    }
+
+    /**
+     * @param CookieJar $cookie
+     */
+    public function setCookie(CookieJar $cookie): void
+    {
+        $this->cookie = $cookie;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getParser()
+    {
+        return $this->parser;
+    }
+
+    /**
+     * @param mixed $parser
+     */
+    public function setParser($parser): void
+    {
+        $this->parser = $parser;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param mixed $file
+     */
+    public function setFile($file): void
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content): void
+    {
+        $this->content = $content;
     }
 
     /**

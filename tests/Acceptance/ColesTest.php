@@ -19,7 +19,7 @@ class ColesTest extends TestCase
         $file = __DIR__.'/../../tmp/test.html';
         $coles = new Coles($file);
 
-        static::assertEquals('NAN Supreme Stage 1 0-6 Months', $coles->filterName());
+        static::assertEquals('NAN Supreme Stage 1 0-6 Months', $coles->connect()->filterName());
     }
 
     public function test_get_price()
@@ -27,6 +27,6 @@ class ColesTest extends TestCase
         $file = __DIR__.'/../../tmp/test.html';
         $coles = new Coles($file);
 
-        static::assertStringContainsString('29', $coles->filterPrice());
+        static::assertStringContainsString('29', $coles->connect()->filterPrice());
     }
 }

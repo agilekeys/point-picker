@@ -17,7 +17,7 @@ use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 final class Html extends BaseCrawler implements Crawler
 {
     /** @var DomCrawler $parser */
-    private $parser;
+    protected $parser;
 
     /**
      * @throws CrawlerException

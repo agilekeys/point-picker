@@ -19,7 +19,7 @@ class WoolsTest extends TestCase
 
         $woo = new Wools($url);
 
-        static::assertStringContainsString('Nestle Nan Supreme Stage 4', $woo->filterName());
+        static::assertStringContainsString('Nestle Nan Supreme Stage 4', $woo->connect()->filterName());
     }
 
     public function test_get_price()
@@ -28,6 +28,6 @@ class WoolsTest extends TestCase
 
         $woo = new Wools($url);
 
-        static::assertStringContainsString('22', $woo->filterPrice());
+        static::assertStringContainsString('22', $woo->connect()->filterPrice());
     }
 }
