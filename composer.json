@@ -1,4 +1,14 @@
 {
+    "name": "agilekeys/point-picker",
+    "description": "Crawler package for online shopping",
+    "keywords": [
+        "crawler"
+    ],
+    "homepage": "https://github.com/agilekeys/point-picker",
+    "license": "MIT",
+    "authors": [
+        {"name": "Duan Li", "email": "inputx@goodays.com"}
+    ],
     "require": {
         "ext-json": "*",
         "symfony/dom-crawler": "^3.4",
